@@ -30,7 +30,7 @@ Press `Open` in the file explorer and wait while Unity imports the project.
 **IMPORTANT:** *Before making any changes to the repository/project, ensure that you are not working on the `main` or `master` branch*
 
 Creating and switching to a new branch:
-> git branch **branchName123**
+> git branch **branchName123** <br>
 >  git checkout **branchName123**
 
 or
@@ -76,10 +76,10 @@ If successful, the green highlighting in the webpage will turn purple and say `M
 ## Syncing your Local Branch with the Main Branch
 When working with multiple developers, your branches will fall behind as others are updating `main` themselves. To ensure you're working with the most recent version of the project, run these commands in order:
 
-> git checkout main
-> git pull
-> git checkout **branchName123**
-> git merge main
+> git checkout main <br>
+> git pull <br>
+> git checkout **branchName123** <br>
+> git merge main <br>
 > git push
 
 where `branchName123` is the name of your branch
