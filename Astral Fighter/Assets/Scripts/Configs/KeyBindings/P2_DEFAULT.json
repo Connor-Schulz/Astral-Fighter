@@ -1,0 +1,7 @@
+{
+  "moveLeft": "LeftArrow",
+  "moveRight": "RightArrow",
+  "jump": "UpArrow",
+  "attack": "Keypad1",
+  "projectile": "Keypad2"
+}
