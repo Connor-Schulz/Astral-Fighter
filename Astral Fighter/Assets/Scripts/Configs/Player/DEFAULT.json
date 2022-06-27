@@ -1,0 +1,8 @@
+{
+  "healthMax": 100,
+  "healthCurrent": 100,
+  "mass": 100,
+  "runSpeed": 50,
+  "jumpHeight": 50,
+  "playerName": "Default"
+}

@@ -1,0 +1,7 @@
+{
+  "moveLeft": "A",
+  "moveRight": "D",
+  "jump": "W",
+  "attack": "G",
+  "projectile": "H"
+}
