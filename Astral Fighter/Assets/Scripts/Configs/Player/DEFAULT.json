@@ -4,5 +4,6 @@
   "mass": 100,
   "runSpeed": 50,
   "jumpHeight": 50,
-  "playerName": "Default"
+  "playerName": "Default",
+  "keyBindingFile": "P1_DEFAULT.json"
 }
