@@ -12,21 +12,11 @@ public class Main : MonoBehaviour
 {
     static Main()
     {
-        string dir = $"{Application.dataPath}/Scripts/Configs/KeyBindings";
+        string dir = $"{Application.dataPath}/Scripts/Configs/Player";
         string [] files = Directory.GetFiles(dir, "*.json");
 
         foreach (string file in files) {
-            string stringifiedJSON = File.ReadAllText(file);
-            KeyBinding kb = KeyBinding.CreateFromJSON(stringifiedJSON);
-            Debug.Log(kb.toString());
-        }
-
-        dir = $"{Application.dataPath}/Scripts/Configs/Player";
-        files = Directory.GetFiles(dir, "*.json");
-
-        foreach (string file in files) {
-            string stringifiedJSON = File.ReadAllText(file);
-            Player p = Player.CreateFromJSON(stringifiedJSON);
+            Player p = Player.CreateFromJSON(file);
             Debug.Log(p.toString());
         }
     }

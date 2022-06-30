@@ -14,8 +14,13 @@ namespace PlayerControl
         public string attack;
         public string projectile;
 
-        public static KeyBinding CreateFromJSON(string jsonString)
+        public KeyBinding(string fileName) {
+
+        }
+
+        public static KeyBinding CreateFromJSON(string fileName)
         {
+            string jsonString = File.ReadAllText(fileName);
             return JsonUtility.FromJson<KeyBinding>(jsonString);
         }
 
@@ -44,6 +49,8 @@ namespace PlayerControl
 
         /* Other */
         public string playerName;
+        public string keyBindingFile;
+        public KeyBinding keyMapping;
 
         public Player() { 
 
@@ -60,9 +67,12 @@ namespace PlayerControl
             playerName = "test";
         }
 
-        public static Player CreateFromJSON(string jsonString)
-        {
-            return JsonUtility.FromJson<Player>(jsonString);
+        public static Player CreateFromJSON(string fileName)
+        {   
+            string jsonString = File.ReadAllText(fileName);
+            Player newPlayer = JsonUtility.FromJson<Player>(jsonString);
+            newPlayer.keyMapping = KeyBinding.CreateFromJSON($"{Application.dataPath}/Scripts/Configs/KeyBindings/"+newPlayer.keyBindingFile);
+            return newPlayer;
         }
 
         public void DamagePlayer (int damageAmount) {
@@ -76,10 +86,12 @@ namespace PlayerControl
         public string toString() {
             return @$"
             healthMax : {healthMax},
+            healthCurrent: {healthCurrent},
             mass : {mass},
             runSpeed : {runSpeed},
             jumpHeight : {jumpHeight},
-            playerName : {playerName},";
+            playerName : {playerName},
+            keyBinding : {keyMapping.toString().Replace("\n","\n\t")}";
         }
     }
 }
