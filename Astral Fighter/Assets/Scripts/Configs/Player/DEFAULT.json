@@ -1,5 +1,5 @@
 {
-  "healthMax": 100,
+  "healthMax": 500,
   "healthCurrent": 100,
   "mass": 100,
   "runSpeed": 50,
